@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Product Directory</title>
+</head>
+<body>
+<div class="container">
+    <h3>Product Directory</h3>
+    <hr>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name:</th>
+            <th>Description:</th>
+            <th>Price:</th>
+            <th>Qty:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tempProduct : ${products}">
+            <td th:text="${tempProduct.name}"></td>
+            <td th:text="${tempProduct.description}"></td>
+            <td th:text="${tempProduct.price}"></td>
+            <td th:text="${tempProduct.qty}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
